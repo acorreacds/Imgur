@@ -29,7 +29,7 @@ export default class App extends Component {
       
       <div className="App">
         <Header page={this.state.pagina} cargarImagenes={this.cargarImagenes.bind(this)} />
-        {/*<ListadoImagenes images={this.state.images} />*/}
+        <ListadoImagenes images={this.state.imagenes} />}
       </div>
     );
   }
