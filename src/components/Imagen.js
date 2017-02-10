@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Panel, Glyphicon, Row, Col } from 'react-bootstrap';
+import { Panel} from 'react-bootstrap';
 
 export default class Imagen extends Component {
 
@@ -24,6 +24,7 @@ export default class Imagen extends Component {
 
           <img
             className='img-responsive'
+            alt='Imgur no pudo cargarse'
             src={this.getImage()} 
             />
         </a>

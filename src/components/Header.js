@@ -15,11 +15,11 @@ export default class Header extends Component {
 
         <Nav right eventKey={0}>
           <NavItem
-            onClick={() => this.props.cargarImagenes(this.props.pagina - 1)}
+            onClick={() => this.props.cargarImagenes(this.props.pagina - 1, this.props.filtro)}
             disabled={this.props.pagina <= 0}>
             <Glyphicon glyph='arrow-left' /> Previo
           </NavItem>
-          <NavItem onClick={() => this.props.cargarImagenes(this.props.pagina + 1)}>
+          <NavItem onClick={() => this.props.cargarImagenes(this.props.pagina + 1, this.props.filtro)}>
             Siguiente <Glyphicon glyph='arrow-right' />
           </NavItem>
         </Nav>
