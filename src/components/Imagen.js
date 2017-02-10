@@ -23,8 +23,9 @@ export default class Imagen extends Component {
           target='_blank'>
 
           <img
-            className='ImgurApp'
-            src={this.getImage()} />
+            className='img-responsive'
+            src={this.getImage()} 
+            />
         </a>
       </Panel>
     );

@@ -12,15 +12,19 @@ export default class App extends Component {
     this.state = {imagenes: [], pagina: 0};
   };
 
-  cargarImagenes(){
+  cargarImagenes(pagina = 0) {
 
-    fetch(apiImgur, setInit)
+    fetch(`https://api.imgur.com/3/gallery/hot/viral/${pagina}`, setInit)
     .then( response => {return response.json();})
-    .then( resp => {this.setState({imagenes: resp.data, pagina: 0});});
+    .then( resp => {this.setState({imagenes: resp.data, pagina: pagina});});
+  }
+
+  filtrar() {
+
   }
 
   componentDidMount() {
-    this.obtenerImagenes();
+    this.cargarImagenes();
   }
   
   render() {
@@ -28,7 +32,7 @@ export default class App extends Component {
     return (
       
       <div className="App">
-        <Header page={this.state.pagina} cargarImagenes={this.cargarImagenes.bind(this)} />
+        <Header pagina={this.state.pagina} cargarImagenes={this.cargarImagenes.bind(this)} />
         <ListadoImagenes images={this.state.imagenes} />}
       </div>
     );
